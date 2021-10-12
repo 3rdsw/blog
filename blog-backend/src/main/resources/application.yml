@@ -1,0 +1,20 @@
+#datasourse
+spring:
+  datasource:
+    username: root
+    password: 1511
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/blog?characterEncoding=utf8&useSSL=false&serverTimezone=UTC&rewriteBatchedStatements=true
+  session:
+    store-type: jdbc
+    jdbc:
+      initialize-schema: always
+
+#port
+server:
+  port: 8081
+
+#配置日志
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
