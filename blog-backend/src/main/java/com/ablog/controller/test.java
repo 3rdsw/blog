@@ -1,21 +1,26 @@
 package com.ablog.controller;
 
 import com.ablog.server.Result;
+import org.apache.shiro.SecurityUtils;
+import org.apache.shiro.session.Session;
+import org.apache.shiro.subject.Subject;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpSession;
+import java.net.HttpCookie;
 
 @RestController
 public class test {
 
     @GetMapping("/test")
-    public Result tes(HttpSession session)
+    public Result tes(HttpSession se)
     {
         Result a = new Result();
+        Subject user = SecurityUtils.getSubject();
+        Session session = user.getSession();
         System.out.println(session.getId());
-        System.out.println(a);
         a.setMsg("### 后端设计遵循以下理念\n" +
                 "\n" +
                 "##### 第一层 controller层 侧重拆分\n" +

@@ -1,6 +1,7 @@
 package com.ablog;
 
 import com.ablog.mapper.UserMapper;
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -16,13 +17,12 @@ class ApplicationTests {
     void insert() {
 
         User user = new User();
-        user.setUser_email("616321565@qq.com");
-        user.setUser_name("3rdsw");
-        user.setUser_password("123456");
+        user.setUserName("123");
+        QueryWrapper<User> queryWrapper = new QueryWrapper<User>().eq("user_name", "123");
 
-        int result = userMapper.insert(user);
-        System.out.println(result);
-        System.out.println(user);
+        User res = userMapper.selectOne(queryWrapper);
+
+        System.out.println(res);
 
     }
 

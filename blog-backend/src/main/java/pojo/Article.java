@@ -10,7 +10,7 @@ import java.util.Date;
 @Data
 public class Article {
     @TableId(type = IdType.AUTO)
-    private int article_id;
+    private Long article_id;
     private int article_writer_id;
     private String article_title;
     private String article_extract;

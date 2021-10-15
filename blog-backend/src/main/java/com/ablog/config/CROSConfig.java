@@ -11,7 +11,7 @@ public class CROSConfig extends WebMvcConfigurationSupport {
     protected void addCorsMappings(CorsRegistry registry) {
         registry.addMapping("/**")
                 .allowedHeaders("*")
-                .allowedOrigins("http://192.168.1.121:8080")
+                .allowedOrigins("http://192.168.1.212:8080")
                 .allowedMethods("POST", "GET", "PUT", "OPTIONS", "DELETE")
                 .maxAge(3600)
                 .allowCredentials(true);

@@ -7,14 +7,14 @@ import java.util.Date;
 @Data
 public class User {
     @TableId(type = IdType.AUTO)
-    private int user_id;
-    private String user_phone;
-    private String user_email;
-    private String user_password;
-    private String user_name;
-    private int user_type;
+    private Long userId;
+    private String userPhone;
+    private String userEmail;
+    private String userPassword;
+    private String userName;
+    private int userType;
     @TableField(fill = FieldFill.INSERT)
-    private Date date_create;
+    private Date dateCreate;
     @TableField(fill = FieldFill.INSERT_UPDATE)
-    private Date date_modify;
+    private Date dateModify;
 }

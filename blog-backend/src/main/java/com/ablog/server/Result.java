@@ -3,6 +3,8 @@ package com.ablog.server;
 import org.springframework.stereotype.Component;
 
 import java.io.Serializable;
+import java.util.HashMap;
+import java.util.Map;
 
 @Component
 public class Result implements Serializable {
@@ -12,6 +14,8 @@ public class Result implements Serializable {
     private Integer code;
 
     private String msg;
+
+    private Object data;
 
     public Result(){};
 
@@ -25,6 +29,13 @@ public class Result implements Serializable {
     {
         this.code = code.code();
         this.msg = code.msg();
+    }
+
+    public Map<String, Object> simple() {
+        Map<String, Object> simple = new HashMap<String, Object>();
+        this.data = simple;
+
+        return simple;
     }
 
     public Integer getCode() {
@@ -41,6 +52,14 @@ public class Result implements Serializable {
 
     public void setMsg(String msg) {
         this.msg = msg;
+    }
+
+    public Object getData() {
+        return data;
+    }
+
+    public void setData(Object data) {
+        this.data = data;
     }
 
 }
