@@ -1,15 +1,16 @@
 package com.ablog.server;
 
+import org.apache.shiro.authc.UsernamePasswordToken;
 import pojo.User;
 
 public interface UserInterface {
 
     void add(User user);
 
-    void delete(Long id);
+    void delete(User user);
 
     void update(User user);
 
-    void select(String name);
+    void select(User user);
 
 }

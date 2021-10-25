@@ -8,18 +8,20 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.net.HttpCookie;
+import java.net.http.HttpResponse;
 
 @RestController
 public class test {
 
     @GetMapping("/test")
-    public Result tes(HttpSession se)
+    public Result tes(HttpSession session, HttpServletResponse response)
     {
         Result a = new Result();
-        Subject user = SecurityUtils.getSubject();
-        Session session = user.getSession();
         System.out.println(session.getId());
         a.setMsg("### 后端设计遵循以下理念\n" +
                 "\n" +

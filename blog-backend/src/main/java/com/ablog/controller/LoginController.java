@@ -68,6 +68,7 @@ public class LoginController {
             r.setResultCode(ResultCode.SUCCESS);
             System.out.println(subject.getSession().getId());
             r.simple().put("token", subject.getSession().getId());
+            r.setData(token);
 
         } catch (UnknownAccountException e) {
             r.setResultCode(ResultCode.USER_NOT_EXIST);

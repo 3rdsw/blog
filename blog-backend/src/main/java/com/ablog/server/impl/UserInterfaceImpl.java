@@ -1,8 +1,10 @@
 package com.ablog.server.impl;
 
 import com.ablog.mapper.UserMapper;
+import com.ablog.server.Result;
 import com.ablog.server.UserInterface;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import org.apache.shiro.authc.UsernamePasswordToken;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import pojo.User;
@@ -19,10 +21,9 @@ public class UserInterfaceImpl implements UserInterface {
     }
 
     @Override
-    public void delete(Long id) {
+    public void delete(User user) {
 
-        System.out.println(id);
-        QueryWrapper<User> queryWrapper = new QueryWrapper<User>().eq("user_id", id);
+        QueryWrapper<User> queryWrapper = new QueryWrapper<User>().eq("user_id", user.getUserId());
         userMapper.delete(queryWrapper);
 
     }
@@ -33,7 +34,7 @@ public class UserInterfaceImpl implements UserInterface {
     }
 
     @Override
-    public void select(String name) {
+    public void select(User user) {
 
     }
 }

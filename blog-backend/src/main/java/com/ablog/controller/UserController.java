@@ -12,10 +12,6 @@ public class UserController {
     @Autowired
     private UserInterfaceImpl userInterface;
 
-    @GetMapping("/delete/{id}")
-    public void delete(@PathVariable("id") Long id)
-    {
-        userInterface.delete(id);
-    }
+
 
 }

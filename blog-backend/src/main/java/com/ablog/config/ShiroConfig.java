@@ -7,6 +7,8 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+import java.util.LinkedHashMap;
+
 @Configuration
 public class ShiroConfig {
 
@@ -16,6 +18,12 @@ public class ShiroConfig {
     {
         ShiroFilterFactoryBean FactoryBean = new ShiroFilterFactoryBean();
         FactoryBean.setSecurityManager(securityManager);
+
+        LinkedHashMap<String, String> filtrMap = new LinkedHashMap<>();
+        filtrMap.put("login", "anon");
+        filtrMap.put("/**/*", "authc");
+        FactoryBean.setFilterChainDefinitionMap(filtrMap);
+
         return FactoryBean;
     }
 

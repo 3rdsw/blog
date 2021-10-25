@@ -10,14 +10,14 @@ import java.util.Date;
 @Data
 public class Article {
     @TableId(type = IdType.AUTO)
-    private Long article_id;
-    private int article_writer_id;
-    private String article_title;
-    private String article_extract;
-    private String article_text;
-    private int article_public;
+    private Long articleId;
+    private int article_writerId;
+    private String articleTitle;
+    private String articleExtract;
+    private String articleText;
+    private int articlePublic;
     @TableField(fill = FieldFill.INSERT)
-    private Date date_create;
+    private Date dateCreate;
     @TableField(fill = FieldFill.INSERT_UPDATE)
-    private Date date_modify;
+    private Date dateModify;
 }
